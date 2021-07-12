@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "coc-toml": ">=1.1.0",
+    "coc-yaml": ">=1.4.2"
+  }
+}
