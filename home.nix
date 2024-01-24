@@ -1,20 +1,13 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   home.username = "synthe";
   home.homeDirectory = "/home/synthe";
-  wayland.windowManager.hyprland = {
-      enable = true;
-      xwayland.enable = true;
-      systemd.enable = true;
-      settings = {
-        "$mod" = "SUPER";
-	bind = [
-	  "$mod, S, exec, kitty"
-	  "$mod, Q, killactive,"
-	];
-      };
-  };
+
+  imports = [
+    ./modules/hyprland
+    ./modules/nvim
+  ];
 
   services = {
     gpg-agent = {
@@ -26,6 +19,14 @@
 
   programs = {
     gpg.enable = true;
+    anyrun = {
+      enable = true;
+      config = {
+        plugins = [
+	  inputs.anyrun.packages.${pkgs.system}.applications
+	];
+      };
+    };
     git = {
       enable = true;
       userName = "Leonard Suslian";
@@ -36,13 +37,24 @@
     };
     kitty = {
       enable = true;
+      settings = {
+        font_family = "FiraCode Nerd Font Mono Med";
+	font_size = "15.0";
+      };
     };
     nushell = {
       enable = true;
+      extraConfig = ''
+        $env.config = {
+	  show_banner: false,
+	};
+      '';
     };
   };
 
   home.packages = with pkgs; [
+    spotify
+    discord
     neofetch
     nnn
 

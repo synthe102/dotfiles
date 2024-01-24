@@ -43,6 +43,11 @@
 
   programs.hyprland.enable = true;
 
+  # fonts
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "FiraCode" ];})
+  ];
+
   services = {
     xserver = {
       enable = true;

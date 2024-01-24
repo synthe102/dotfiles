@@ -7,21 +7,41 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    anyrun = {
+      url = "github:Kirottu/anyrun";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, ...}@inputs: {
+  outputs = { self, nixpkgs, home-manager, anyrun, nixvim, ...}@inputs:
+  let
+  in {
     nixosConfigurations = {
       "nixos" = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        system =  "x86_64-linux";
 	modules = [
 	  ./configuration.nix
 
 	  home-manager.nixosModules.home-manager
 	  {
-	    home-manager.useGlobalPkgs = true;
-	    home-manager.useUserPackages = true;
+	    home-manager = {
+	      extraSpecialArgs = { inherit inputs; };
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.synthe = {
+	        imports = [
+		  ./home.nix
+		  inputs.anyrun.homeManagerModules.default
+		  inputs.nixvim.homeManagerModules.nixvim
+		];
+	      };
+	    };
 
-	    home-manager.users.synthe = import ./home.nix;
+	    
 	  }
 	];
       };
