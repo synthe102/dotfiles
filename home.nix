@@ -30,7 +30,11 @@
     git = {
       enable = true;
       userName = "Leonard Suslian";
-      userEmail = "leonard.suslian@gmail.com";
+      userEmail = "leonard.suslian@konghq.com";
+      signing = {
+        signByDefault = true;
+        key = "A94C18A1F2FDBAB8";
+      };
     };
     starship = {
       enable = true;
