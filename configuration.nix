@@ -19,6 +19,8 @@
   #sound
   security.rtkit.enable = true;
 
+  virtualisation.docker.enable = true;
+
   hardware = {
     opengl = {
       enable = true;
@@ -86,6 +88,7 @@
 
   # Set your time zone.
   time.timeZone = "Europe/Paris";
+  time.hardwareClockInLocalTime = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -124,7 +127,7 @@
     isNormalUser = true;
     shell = pkgs.nushell;
     description = "synthe";
-    extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "docker" "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       firefox
       tree

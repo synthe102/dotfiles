@@ -5,6 +5,10 @@
       systemd.enable = true;
       settings = {
         "$mod" = "SUPER";
+  monitor = [
+    "DP-3,3840x2160@120,0x0,1.25"
+    "HDMI-A-1,2560x2880,-2048x-200,1.25"
+  ];
 	bind = [
 	  "$mod, return, exec, kitty"
 	  "$mod, F, exec, anyrun"
@@ -38,5 +42,33 @@
 	  kb_variant = "intl";
 	};
       };
+  };
+
+  programs.waybar = {
+    enable = true;
+    systemd.enable = true;
+
+    settings = [
+      (
+        {
+          layer = "top";
+          position = "top";
+          height = 40;
+
+          fixed-center = false;
+
+          modules-left = ["hyprland/workspaces"];
+          modules-right = [
+            "pulseaudio"
+            "memory"
+            "cpu"
+            "clock"
+
+            "tray"
+          ];
+        }
+      )
+    ];
+    style = builtins.readFile ./style.css;
   };
 }
