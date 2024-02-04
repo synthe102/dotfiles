@@ -1,4 +1,4 @@
-{ config, ...}: {
+{config, ...}: {
   imports = [
     ./plugins
     ./ui.nix

@@ -1,4 +1,4 @@
-{ config, ...}: {
+{config, ...}: {
   imports = [
     ./bar.nix
     ./completion.nix

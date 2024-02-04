@@ -15,35 +15,44 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    alejandra = {
+      url = "github:kamadorueda/alejandra/3.0.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, anyrun, nixvim, ...}@inputs:
-  let
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    anyrun,
+    nixvim,
+    alejandra,
+    ...
+  } @ inputs: let
   in {
     nixosConfigurations = {
       "nixos" = nixpkgs.lib.nixosSystem {
-        system =  "x86_64-linux";
-	modules = [
-	  ./configuration.nix
+        system = "x86_64-linux";
+        modules = [
+          ./configuration.nix
 
-	  home-manager.nixosModules.home-manager
-	  {
-	    home-manager = {
-	      extraSpecialArgs = { inherit inputs; };
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              extraSpecialArgs = {inherit inputs;};
               useGlobalPkgs = true;
               useUserPackages = true;
               users.synthe = {
-	        imports = [
-		  ./home.nix
-		  inputs.anyrun.homeManagerModules.default
-		  inputs.nixvim.homeManagerModules.nixvim
-		];
-	      };
-	    };
-
-	    
-	  }
-	];
+                imports = [
+                  ./home.nix
+                  inputs.anyrun.homeManagerModules.default
+                  inputs.nixvim.homeManagerModules.nixvim
+                ];
+              };
+            };
+          }
+        ];
       };
     };
   };

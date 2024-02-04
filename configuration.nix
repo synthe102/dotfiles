@@ -1,14 +1,16 @@
 # Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
-{ config, lib, pkgs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   nixpkgs.config.allowUnfree = true;
 
@@ -31,7 +33,7 @@
       modesetting.enable = true;
       powerManagement = {
         enable = false;
-	finegrained = false;
+        finegrained = false;
       };
       open = false;
       nvidiaSettings = true;
@@ -47,35 +49,35 @@
 
   # fonts
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" ];})
+    (nerdfonts.override {fonts = ["FiraCode"];})
   ];
 
   services = {
     xserver = {
       enable = true;
-      videoDrivers = [ "nvidia" ];
+      videoDrivers = ["nvidia"];
       displayManager = {
         gdm = {
-	  enable = true;
-	  wayland = true;
-	};
-	sessionPackages = [ pkgs.hyprland ];
+          enable = true;
+          wayland = true;
+        };
+        sessionPackages = [pkgs.hyprland];
       };
     };
     pipewire = {
       enable = true;
       alsa = {
         enable = true;
-	support32Bit = true;
+        support32Bit = true;
       };
       pulse.enable = true;
     };
-    udev.packages = [ pkgs.yubikey-personalization ];
+    udev.packages = [pkgs.yubikey-personalization];
   };
 
   nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
-    trusted-users = [ "synthe" ];
+    experimental-features = ["nix-command" "flakes"];
+    trusted-users = ["synthe"];
     substituters = [
       "https://cache.nixos.org"
     ];
@@ -104,9 +106,6 @@
 
   # Enable the X11 windowing system.
 
-
-  
-
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
@@ -127,7 +126,7 @@
     isNormalUser = true;
     shell = pkgs.nushell;
     description = "synthe";
-    extraGroups = [ "docker" "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
+    extraGroups = ["docker" "wheel" "networkmanager"]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       firefox
       tree
@@ -188,6 +187,4 @@
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "23.11"; # Did you read the comment?
-
 }
-

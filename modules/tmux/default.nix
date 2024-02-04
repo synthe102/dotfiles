@@ -1,4 +1,4 @@
-{ pkgs, ...}: {
+{pkgs, ...}: {
   programs.tmux = {
     enable = true;
     clock24 = true;
@@ -22,7 +22,7 @@
         '';
       }
     ];
-    
+
     extraConfig = ''
       bind | split-window -h
       bind - split-window -v

@@ -1,6 +1,9 @@
-{ config, pkgs, inputs, ... }:
-
 {
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   home.username = "synthe";
   home.homeDirectory = "/home/synthe";
 
@@ -26,7 +29,7 @@
           randr
           shell
           symbols
-	      ];
+        ];
         width.fraction = 0.3;
         y.absolute = 30;
         hidePluginInfo = true;
@@ -109,16 +112,16 @@
       theme = "Catppuccin-Mocha";
       settings = {
         font_family = "FiraCode Nerd Font Mono Med";
-	font_size = "15.0";
+        font_size = "15.0";
       };
     };
     nushell = {
       enable = true;
       extraConfig = ''
-        $env.config = {
-	  show_banner: false,
-	};
-  $env.PATH = ($env.PATH | split row (char esep) | append "/home/synthe/.local/bin")
+               $env.config = {
+          show_banner: false,
+        };
+         $env.PATH = ($env.PATH | split row (char esep) | append "/home/synthe/.local/bin")
       '';
       shellAliases = {
         k = "kubectl";
@@ -132,26 +135,30 @@
     bash.enable = true;
   };
 
-  home.packages = with pkgs; [
-    spotify
-    discord
-    neofetch
-    nnn
+  home.packages = with pkgs;
+    [
+      spotify
+      discord
+      neofetch
+      nnn
 
-    pavucontrol
+      pavucontrol
 
-    pinentry
-    yubikey-personalization
+      pinentry
+      yubikey-personalization
 
-    jq
-    fzf
-    ripgrep
-    btop
-    gh
-    kind
-    kubectl
-    k9s
-  ];
+      jq
+      fzf
+      ripgrep
+      btop
+      gh
+      kind
+      kubectl
+      k9s
+    ]
+    ++ [
+      inputs.alejandra.defaultPackage.${pkgs.system}
+    ];
 
   home.stateVersion = "23.11";
 
