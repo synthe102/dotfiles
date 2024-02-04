@@ -118,8 +118,18 @@
         $env.config = {
 	  show_banner: false,
 	};
+  $env.PATH = ($env.PATH | split row (char esep) | append "/home/synthe/.local/bin")
       '';
+      shellAliases = {
+        k = "kubectl";
+      };
     };
+    direnv = {
+      enable = true;
+      enableBashIntegration = true;
+      nix-direnv.enable = true;
+    };
+    bash.enable = true;
   };
 
   home.packages = with pkgs; [
@@ -134,6 +144,7 @@
     yubikey-personalization
 
     jq
+    fzf
     ripgrep
     btop
     gh

@@ -9,23 +9,30 @@
     customPaneNavigationAndResize = true;
 
     shortcut = "a";
+    baseIndex = 1;
+    mouse = true;
 
-    plugins = with pkgs.tmuxPlugins; [
-      catppuccin
+    plugins = with pkgs; [
+      {
+        plugin = tmuxPlugins.catppuccin;
+        extraConfig = ''
+          set -g @catppuccin_window_right_separator " "
+          set -g @catppuccin_window_current_text "#W"
+          set -g @catppuccin_window_default_text "#W"
+        '';
+      }
     ];
     
     extraConfig = ''
-      set -g mouse on
-
       bind | split-window -h
       bind - split-window -v
 
       set -g focus-events on
-
-      set -g automatic-rename
-      set -g automatic-rename-format '#{pane_current_command}'
-      set -g base-index 1
-      setw -g pane-base-index 1
     '';
+  };
+
+  home.file.".local/bin/tmux-sessionizer" = {
+    source = ./scripts/tmux-sessionizer.sh;
+    executable = true;
   };
 }
