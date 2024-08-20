@@ -5,7 +5,7 @@
   ...
 }: {
   options = {
-    shell.enable = lib.mkEnableOption "enable k8s tooling";
+    shell.enable = lib.mkEnableOption "enable shell config";
   };
 
   config = lib.mkIf config.shell.enable {
