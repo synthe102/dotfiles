@@ -3,16 +3,19 @@
   lib,
   config,
   ...
-}: {
+}: let
+  isDarwin = pkgs.stdenv.isDarwin;
+in {
   options = {
-    dev.git.enable = lib.mkEnableOption "enable k8s tooling";
+    dev.git.enable = lib.mkEnableOption "enable git tooling";
   };
 
   config = lib.mkIf config.dev.git.enable {
-    home.packages = with pkgs; [
-      gh
-      pinentry_mac
-    ];
+    home.packages = with pkgs;
+      [
+        gh
+      ]
+      ++ pkgs.lib.optionals isDarwin [pinentry_mac];
 
     programs = {
       gpg.enable = true;
