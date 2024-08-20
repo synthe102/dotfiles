@@ -5,12 +5,4 @@
   imports = [
     ../../homeManagerModules
   ];
-
-  shell.enable = true;
-  neovim.enable = true;
-  dev = {
-    enable = true;
-    git.enable = true;
-    kubernetes.enable = true;
-  };
 }

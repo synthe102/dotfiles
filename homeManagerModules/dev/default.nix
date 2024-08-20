@@ -14,6 +14,11 @@
   };
 
   config = lib.mkIf config.dev.enable {
+    dev = {
+      git.enable = lib.mkDefault true;
+      kubernetes.enable = lib.mkDefault true;
+    };
+
     programs.direnv = {
       enable = true;
       enableZshIntegration = true;
