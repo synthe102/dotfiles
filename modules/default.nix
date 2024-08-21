@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./user.nix
+    ./cache.nix
   ];
 
   # Auto upgrade nix package and the daemon service.
