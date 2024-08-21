@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   imports = [
     ./user.nix
-    ./darwin.nix
   ];
 
   # Auto upgrade nix package and the daemon service.

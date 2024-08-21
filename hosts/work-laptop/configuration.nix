@@ -1,6 +1,7 @@
 {user, ...}: {
   imports = [
     ../../modules
+    ../../darwinModules
   ];
 
   home-manager = {
