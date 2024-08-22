@@ -7,6 +7,7 @@
   imports = [
     ./kubernetes.nix
     ./git.nix
+    ./virt.nix
   ];
 
   options = {
@@ -17,6 +18,7 @@
     dev = {
       git.enable = lib.mkDefault true;
       kubernetes.enable = lib.mkDefault true;
+      virt.enable = lib.mkDefault true;
     };
 
     programs.direnv = {
