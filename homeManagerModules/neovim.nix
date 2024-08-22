@@ -14,5 +14,9 @@
       ripgrep
       nodejs_22
     ];
+
+    home.sessionVariables = {
+      EDITOR = "nvim";
+    };
   };
 }
