@@ -13,6 +13,7 @@ in {
   config = lib.mkIf config.dev.git.enable {
     home.packages = with pkgs;
       [
+        git
         gh
       ]
       ++ pkgs.lib.optionals isDarwin [pinentry_mac];

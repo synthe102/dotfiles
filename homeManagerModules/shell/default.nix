@@ -2,8 +2,14 @@
   pkgs,
   lib,
   config,
+  user,
   ...
-}: {
+}: let
+  homePath =
+    if pkgs.stdenv.isDarwin
+    then "/Users/${user.name}"
+    else "/home/${user.name}";
+in{
   options = {
     shell.enable = lib.mkEnableOption "enable shell config";
   };
@@ -63,7 +69,7 @@
     };
 
     home.sessionPath = [
-      "/Users/synthe102/.local/bin"
+      "${homePath}/.local/bin"
       "/opt/homebrew/bin"
     ];
   };

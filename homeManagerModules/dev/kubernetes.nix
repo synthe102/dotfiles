@@ -15,6 +15,7 @@
       kubectl
       k9s
       kubeseal
+      teleport
     ];
 
     programs.zsh = {

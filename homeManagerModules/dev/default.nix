@@ -32,6 +32,7 @@
       rustup
       alejandra
       google-cloud-sdk
+      gcc
     ];
   };
 }
