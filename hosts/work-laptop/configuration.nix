@@ -8,6 +8,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users.${user.name} = import ./home.nix;
+    extraSpecialArgs = {inherit user;};
   };
 
   # Used for backwards compatibility, please read the changelog before changing.
