@@ -8,6 +8,7 @@
     ./kubernetes.nix
     ./git.nix
     ./virt.nix
+    ./iac.nix
   ];
 
   options = {
@@ -19,6 +20,7 @@
       git.enable = lib.mkDefault true;
       kubernetes.enable = lib.mkDefault true;
       virt.enable = lib.mkDefault true;
+      iac.enable = lib.mkDefault true;
     };
 
     programs.direnv = {
@@ -29,6 +31,7 @@
     home.packages = with pkgs; [
       rustup
       alejandra
+      google-cloud-sdk
     ];
   };
 }
