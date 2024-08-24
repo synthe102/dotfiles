@@ -16,6 +16,7 @@
       k9s
       kubeseal
       teleport
+      talosctl
     ];
 
     programs.zsh = {
