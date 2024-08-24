@@ -17,6 +17,7 @@
       kubeseal
       teleport
       talosctl
+      kumactl
     ];
 
     programs.zsh = {

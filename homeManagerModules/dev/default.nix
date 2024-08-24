@@ -33,7 +33,7 @@
       alejandra
       google-cloud-sdk
       gcc
-      kumactl
+      unzip
     ];
   };
 }
