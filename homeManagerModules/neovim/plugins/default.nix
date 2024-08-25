@@ -9,5 +9,6 @@
     ./telescope.nix
     ./git.nix
     ./ui.nix
+    ./comment.nix
   ];
 }
