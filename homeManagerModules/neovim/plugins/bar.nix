@@ -15,17 +15,22 @@
       }
     ];
 
-    plugins.bufferline = {
-      enable = true;
-      settings = {
-        options = {
-          offsets = [
-            {
-              filetype = "neo-tree";
-              text = "File tree";
-              text_align = "left";
-            }
-          ];
+    plugins = {
+      barbecue = {
+        enable = true;
+      };
+      bufferline = {
+        enable = true;
+        settings = {
+          options = {
+            offsets = [
+              {
+                filetype = "neo-tree";
+                text = "File tree";
+                text_align = "left";
+              }
+            ];
+          };
         };
       };
     };
