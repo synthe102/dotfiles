@@ -1,7 +1,7 @@
 {lib, ...}: {
   imports = [
     ./shell
-    ./neovim.nix
+    ./neovim
     ./dev
   ];
 

@@ -1,4 +1,4 @@
-{user, pkgs, ...}: {
+{user, pkgs,inputs, ...}: {
   imports = [
     ../../modules
   ];
@@ -9,6 +9,6 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users.${user.name} = import ./home.nix;
-    extraSpecialArgs = {inherit user;};
+    extraSpecialArgs = {inherit user inputs;};
   };
 }
