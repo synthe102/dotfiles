@@ -3,7 +3,7 @@
     plugins.lualine = {
       enable = true;
       globalstatus = true;
-      componentSeparators = {
+      sectionSeparators = {
         left = "";
         right = "";
       };

@@ -12,6 +12,9 @@
     plugins.neo-tree = {
       enable = true;
       closeIfLastWindow = true;
+      filesystem.window.mappings = {
+        "<tab>" = "toggle_node";
+      };
     };
   };
 }

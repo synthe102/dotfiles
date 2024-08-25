@@ -1,6 +1,10 @@
 {
   programs.nixvim = {
     plugins.indent-blankline.enable = true;
+    plugins.alpha = {
+      enable = true;
+      theme = "dashboard";
+    };
 
     plugins.smart-splits.enable = true;
     keymaps = [
