@@ -1,4 +1,4 @@
-{user, ...}: {
+{user, inputs, ...}: {
   imports = [
     ../../modules
     ../../darwinModules
@@ -8,7 +8,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users.${user.name} = import ./home.nix;
-    extraSpecialArgs = {inherit user;};
+    extraSpecialArgs = {inherit user inputs;};
   };
 
   # Used for backwards compatibility, please read the changelog before changing.
