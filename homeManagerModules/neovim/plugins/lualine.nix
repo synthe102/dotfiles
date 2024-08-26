@@ -7,6 +7,10 @@
         left = "";
         right = "";
       };
+      componentSeparators = {
+        left = "";
+        right = "";
+      };
     };
   };
 }
