@@ -34,6 +34,7 @@
       google-cloud-sdk
       gcc
       unzip
+      btop
     ];
   };
 }
