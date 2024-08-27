@@ -10,5 +10,6 @@
     ./git.nix
     ./ui.nix
     ./comment.nix
+    ./oil.nix
   ];
 }
