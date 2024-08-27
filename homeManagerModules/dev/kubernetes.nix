@@ -18,6 +18,7 @@
       teleport
       talosctl
       kumactl
+      kubernetes-helm
     ];
 
     programs.zsh = {

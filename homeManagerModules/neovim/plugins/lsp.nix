@@ -43,6 +43,7 @@
             installCargo = false;
           };
           pyright.enable = true;
+          helm-ls.enable = true;
         };
       };
 
