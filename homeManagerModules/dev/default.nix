@@ -29,6 +29,7 @@
       nix-direnv.enable = true;
     };
     home.packages = with pkgs; [
+      docker-client
       rustup
       alejandra
       google-cloud-sdk
