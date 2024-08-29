@@ -13,5 +13,6 @@
     ./oil.nix
     ./helm.nix
     ./extra.nix
+    ./bufdelete.nix
   ];
 }

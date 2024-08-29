@@ -13,7 +13,7 @@
       {
         mode = "n";
         key = "<leader>x";
-        action = ":bd<CR>";
+        action = ":Bdelete<CR>";
         options.silent = true;
       }
     ];
