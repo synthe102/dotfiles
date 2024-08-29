@@ -29,6 +29,7 @@
       nix-direnv.enable = true;
     };
     home.packages = with pkgs; [
+      bazel_7
       docker-client
       rustup
       alejandra
