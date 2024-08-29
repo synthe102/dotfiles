@@ -12,5 +12,6 @@
     ./comment.nix
     ./oil.nix
     ./helm.nix
+    ./extra.nix
   ];
 }
