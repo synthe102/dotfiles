@@ -23,7 +23,6 @@
       nodejs_22
     ];
 
-
     programs.nixvim = {
       enable = true;
       defaultEditor = true;
