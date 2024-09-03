@@ -2,6 +2,7 @@
   imports = [
     ./user.nix
     ./cache.nix
+    ./docker.nix
   ];
 
   # Auto upgrade nix package and the daemon service.

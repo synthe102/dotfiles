@@ -29,6 +29,7 @@
       nix-direnv.enable = true;
     };
     home.packages = with pkgs; [
+      gnumake
       bazel_7
       docker-client
       rustup
