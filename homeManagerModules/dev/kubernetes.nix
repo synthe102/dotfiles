@@ -19,6 +19,7 @@
       talosctl
       kumactl
       kubernetes-helm
+      kubectl-cnpg
     ];
 
     programs.zsh = {

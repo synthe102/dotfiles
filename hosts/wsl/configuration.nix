@@ -1,6 +1,12 @@
-{user, pkgs,inputs, ...}: {
+{
+  user,
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     ../../modules
+    ../../nixosModules
   ];
 
   users.defaultUserShell = pkgs.zsh;
