@@ -20,6 +20,7 @@
       kumactl
       kubernetes-helm
       kubectl-cnpg
+      fluxcd
     ];
 
     programs.zsh = {
