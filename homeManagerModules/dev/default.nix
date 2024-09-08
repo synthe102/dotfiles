@@ -38,6 +38,7 @@
       google-cloud-sdk
       unzip
       btop
+      dive
     ];
   };
 }

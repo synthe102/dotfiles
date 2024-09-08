@@ -46,6 +46,7 @@
           helm-ls.enable = true;
           svelte.enable = true;
           tsserver.enable = true;
+          dockerls.enable = true;
         };
       };
 

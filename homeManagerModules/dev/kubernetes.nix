@@ -21,6 +21,7 @@
       kubernetes-helm
       kubectl-cnpg
       fluxcd
+      dive
     ];
 
     programs.zsh = {
