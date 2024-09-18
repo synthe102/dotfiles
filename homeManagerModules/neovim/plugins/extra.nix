@@ -1,7 +1,12 @@
 {pkgs, ...}: {
   programs.nixvim = {
     extraPlugins = [
-      pkgs.vimPlugins.precognition-nvim
+      {
+        plugin = pkgs.vimPlugins.precognition-nvim;
+        config = ''
+          :lua require("precognition").setup({startVisible=false})
+        '';
+      }
     ];
   };
 }

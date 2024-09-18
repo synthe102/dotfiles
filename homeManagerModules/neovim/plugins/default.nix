@@ -1,5 +1,6 @@
 {...}: {
   imports = [
+    ./avante.nix
     ./neo-tree.nix
     ./bar.nix
     ./lualine.nix
