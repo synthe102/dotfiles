@@ -45,7 +45,7 @@
           pyright.enable = true;
           helm-ls.enable = true;
           svelte.enable = true;
-          tsserver.enable = true;
+          ts-ls.enable = true;
           dockerls.enable = true;
         };
       };
