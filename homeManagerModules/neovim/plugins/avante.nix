@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   programs.nixvim = {
     extraConfigLua = ''
+      require("avante_lib").load()
       require("avante").setup({
         provider = "mistral",
         vendors = {
