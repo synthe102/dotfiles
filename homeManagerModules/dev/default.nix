@@ -39,6 +39,7 @@
       unzip
       btop
       dive
+      tree
     ];
   };
 }
