@@ -22,7 +22,7 @@ in {
       gpg.enable = true;
       git = {
         enable = true;
-        userName = "Léonard Suslian";
+        userName = "synthe102";
         userEmail = "leonard@suslian.engineer";
 
         extraConfig = {

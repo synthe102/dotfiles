@@ -40,6 +40,7 @@
       btop
       dive
       tree
+      jq
     ];
   };
 }
