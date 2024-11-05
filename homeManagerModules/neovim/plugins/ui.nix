@@ -6,7 +6,10 @@
       theme = "dashboard";
     };
 
-    plugins.smart-splits.enable = true;
+    plugins = {
+      web-devicons.enable = true;
+      smart-splits.enable = true;
+    };
     keymaps = [
       {
         mode = "n";

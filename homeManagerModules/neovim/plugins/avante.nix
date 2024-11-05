@@ -42,7 +42,7 @@
       vimPlugins.nvim-web-devicons
       vimPlugins.avante-nvim
       {
-        plugin = vimPlugins.render-markdown;
+        plugin = vimPlugins.render-markdown-nvim;
         config = ''
           :lua require("render-markdown").setup({file_types = { "markdown", "Avante" }})
         '';
