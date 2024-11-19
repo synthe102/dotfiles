@@ -33,7 +33,7 @@
         };
 
         servers = {
-          nil-ls.enable = true;
+          nil_ls.enable = true;
           gopls.enable = true;
           terraformls.enable = true;
           clangd.enable = true;
