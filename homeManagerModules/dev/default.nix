@@ -29,6 +29,7 @@
       nix-direnv.enable = true;
     };
     home.packages = with pkgs; [
+      nix-init
       gnumake
       bazel_7
       docker-client

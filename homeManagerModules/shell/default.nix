@@ -9,7 +9,7 @@
     if pkgs.stdenv.isDarwin
     then "/Users/${user.name}"
     else "/home/${user.name}";
-in{
+in {
   options = {
     shell.enable = lib.mkEnableOption "enable shell config";
   };
@@ -59,6 +59,7 @@ in{
           bind - split-window -v
 
           set -g focus-events on
+          set -g default-command "$SHELL"
         '';
       };
     };
