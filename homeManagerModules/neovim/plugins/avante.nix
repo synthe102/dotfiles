@@ -1,6 +1,6 @@
 {pkgs, ...}: {
-  programs.nixvim = {
-    plugins.avante = {
+  programs.nixvim.plugins = {
+    avante = {
       enable = true;
       settings = {
         provider = "mistral";
@@ -12,6 +12,12 @@
             model = "mistral-large-latest";
           };
         };
+      };
+    };
+    render-markdown = {
+      enable = true;
+      settings = {
+        file_types = ["markdown" "Avante"];
       };
     };
   };
