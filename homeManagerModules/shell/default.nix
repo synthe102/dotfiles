@@ -46,10 +46,16 @@ in {
           {
             plugin = tmuxPlugins.catppuccin;
             extraConfig = ''
-              set -g @catppuccin_window_right_separator " "
-              set -g @catppuccin_window_current_text "#W"
-              set -g @catppuccin_window_default_text "#W"
+              set -g @catppuccin_flavor "mocha"
+              set -g @catppuccin_window_current_text " #{pane_current_command}"
+              set -g @catppuccin_window_text " #{pane_current_command}"
               set -ga terminal-overrides ",xterm-256color:Tc"
+              set -g status-right-length 100
+              set -g status-left-length 100
+              set -g status-left ""
+              set -g status-right "#{E:@catppuccin_status_session}"
+              set -ag status-right "#{E:@catppuccin_status_date_time}"
+              set -g @catppuccin_status_left_separator "█"
             '';
           }
         ];
@@ -59,7 +65,6 @@ in {
           bind - split-window -v
 
           set -g focus-events on
-          set -g default-command "$SHELL"
         '';
       };
     };
