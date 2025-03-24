@@ -76,6 +76,7 @@ in {
 
     home.sessionPath = [
       "${homePath}/.local/bin"
+      "${homePath}/.krew/bin"
       "/opt/homebrew/bin"
     ];
   };

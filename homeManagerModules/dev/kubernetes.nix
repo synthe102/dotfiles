@@ -13,6 +13,7 @@
       kubectx
       fzf
       kubectl
+      krew
       k9s
       kubeseal
       teleport
