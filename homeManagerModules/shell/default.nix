@@ -15,19 +15,16 @@ in {
   };
 
   config = lib.mkIf config.shell.enable {
+    home.shell.enableZshIntegration = true;
     programs = {
+      atuin = {
+        enable = true;
+      };
       starship.enable = true;
       zsh = {
         enable = true;
+        defaultKeymap = "vicmd";
         syntaxHighlighting.enable = true;
-        oh-my-zsh.enable = true;
-        plugins = [
-          {
-            name = "vi-mode";
-            src = pkgs.zsh-vi-mode;
-            file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
-          }
-        ];
       };
       tmux = {
         enable = true;

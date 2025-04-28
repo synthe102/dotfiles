@@ -11,5 +11,6 @@ in {
   users.users.${user.name} = {
     name = user.name;
     home = homePath;
+    shell = pkgs.zsh;
   };
 }
