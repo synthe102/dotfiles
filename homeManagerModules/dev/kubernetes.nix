@@ -13,6 +13,7 @@
       kubectx
       fzf
       kubectl
+      kubelogin-oidc
       krew
       k9s
       kubeseal
