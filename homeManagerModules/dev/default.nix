@@ -43,6 +43,7 @@
       dive
       tree
       jq
+      gnused
     ];
   };
 }
