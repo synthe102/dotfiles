@@ -23,7 +23,7 @@ in {
       starship.enable = true;
       zsh = {
         enable = true;
-        defaultKeymap = "vicmd";
+        defaultKeymap = "viins";
         syntaxHighlighting.enable = true;
       };
       tmux = {
