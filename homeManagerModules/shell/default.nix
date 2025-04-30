@@ -25,6 +25,7 @@ in {
         enable = true;
         defaultKeymap = "viins";
         syntaxHighlighting.enable = true;
+        autosuggestion.enable = true;
       };
       tmux = {
         enable = true;
