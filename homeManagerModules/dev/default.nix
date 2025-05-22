@@ -44,6 +44,7 @@
       tree
       jq
       gnused
+      wget
     ];
   };
 }

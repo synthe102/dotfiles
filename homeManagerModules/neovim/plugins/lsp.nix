@@ -47,7 +47,6 @@
           svelte.enable = true;
           ts_ls.enable = true;
           dockerls.enable = true;
-          denols.enable = true;
         };
       };
 

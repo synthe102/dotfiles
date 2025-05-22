@@ -23,9 +23,9 @@ in {
       starship.enable = true;
       zsh = {
         enable = true;
+        autosuggestion.enable = true;
         defaultKeymap = "viins";
         syntaxHighlighting.enable = true;
-        autosuggestion.enable = true;
       };
       tmux = {
         enable = true;
