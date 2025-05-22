@@ -1,6 +1,6 @@
 {
   programs.nixvim = {
-    diagnostic.config = {
+    diagnostic.settings = {
       virtual_text = true;
     };
 
