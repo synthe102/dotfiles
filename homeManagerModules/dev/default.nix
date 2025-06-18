@@ -32,10 +32,8 @@
       devenv
       nix-init
       gnumake
-      bazel_7
       docker-client
       docker-credential-helpers
-      rustup
       alejandra
       google-cloud-sdk
       unzip
