@@ -77,5 +77,6 @@ in {
       "${homePath}/.krew/bin"
       "/opt/homebrew/bin"
     ];
+    programs.btop.enable = true;
   };
 }

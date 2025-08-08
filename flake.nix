@@ -18,6 +18,7 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    catppuccin.url = "github:catppuccin/nix";
   };
 
   outputs = {
@@ -27,9 +28,12 @@
     nixos-wsl,
     home-manager,
     nixvim,
+    catppuccin,
     ...
   } @ inputs: let
-    user = {name = "synthe102";};
+    user = {
+      name = "synthe102";
+    };
   in {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#simple
@@ -42,6 +46,14 @@
       ];
     };
     nixosConfigurations = {
+      krangle = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs user;};
+        modules = [
+          ./hosts/krangle/configuration.nix
+          home-manager.nixosModules.home-manager
+        ];
+      };
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs user;};
