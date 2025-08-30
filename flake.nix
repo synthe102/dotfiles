@@ -61,14 +61,6 @@
           ./hosts/wsl/configuration.nix
           home-manager.nixosModules.home-manager
           nixos-wsl.nixosModules.default
-          {
-            system.stateVersion = "24.05";
-            wsl = {
-              enable = true;
-              defaultUser = "synthe102";
-              useWindowsDriver = true;
-            };
-          }
         ];
       };
     };
