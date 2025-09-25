@@ -37,7 +37,7 @@
   in {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#simple
-    darwinConfigurations."Leonards-MacBook-Air" = nix-darwin.lib.darwinSystem {
+    darwinConfigurations."MBA-Leonard" = nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       specialArgs = {inherit inputs user;};
       modules = [
