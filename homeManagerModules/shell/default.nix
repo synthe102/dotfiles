@@ -36,7 +36,7 @@ in {
         keyMode = "vi";
         customPaneNavigationAndResize = true;
 
-        shortcut = "a";
+        prefix = "C-a";
         baseIndex = 1;
         mouse = true;
 
@@ -61,6 +61,7 @@ in {
         extraConfig = ''
           bind | split-window -h
           bind - split-window -v
+          bind a send-keys C-a
 
           set -g focus-events on
         '';
