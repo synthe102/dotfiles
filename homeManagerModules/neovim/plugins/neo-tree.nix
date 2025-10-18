@@ -11,12 +11,14 @@
 
     plugins.neo-tree = {
       enable = true;
-      closeIfLastWindow = true;
-      filesystem = {
-        window.mappings = {
-          "<tab>" = "toggle_node";
+      settings = {
+        close_if_last_window = true;
+        filesystem = {
+          window.mappings = {
+            "<tab>" = "toggle_node";
+          };
+          filteredItems.visible = true;
         };
-        filteredItems.visible = true;
       };
     };
   };
