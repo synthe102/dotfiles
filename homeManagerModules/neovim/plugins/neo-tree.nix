@@ -17,7 +17,9 @@
           window.mappings = {
             "<tab>" = "toggle_node";
           };
-          filteredItems.visible = true;
+          filtered_items = {
+            visible = true;
+          };
         };
       };
     };
