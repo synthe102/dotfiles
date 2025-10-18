@@ -15,6 +15,5 @@
     ./helm.nix
     ./extra.nix
     ./bufdelete.nix
-    ./molten.nix
   ];
 }
