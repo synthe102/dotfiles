@@ -1,6 +1,6 @@
-{...}: {
+{ ... }:
+{
   imports = [
-    ./avante.nix
     ./neo-tree.nix
     ./bar.nix
     ./lualine.nix
@@ -11,9 +11,7 @@
     ./git.nix
     ./ui.nix
     ./comment.nix
-    ./oil.nix
     ./helm.nix
-    ./extra.nix
     ./bufdelete.nix
   ];
 }
