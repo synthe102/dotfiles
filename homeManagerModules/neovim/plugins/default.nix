@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    ./codecompanion.nix
     ./neo-tree.nix
     ./bar.nix
     ./lualine.nix
@@ -12,6 +13,6 @@
     ./ui.nix
     ./comment.nix
     ./helm.nix
-    ./bufdelete.nix
+    ./snacks.nix
   ];
 }

@@ -13,7 +13,7 @@
       {
         mode = "n";
         key = "<leader>x";
-        action = ":Bdelete<CR>";
+        action = ":lua Snacks.bufdelete()<CR>";
         options.silent = true;
       }
     ];
