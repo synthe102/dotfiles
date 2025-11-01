@@ -1,15 +1,11 @@
 {
   programs.nixvim = {
-    opts.completeopt = [
-      "menu"
-      "menuone"
-    ];
-
     plugins = {
       nvim-autopairs.enable = true;
       blink-cmp = {
         enable = true;
         settings = {
+          completion.documentation.auto_show = true;
           keymap = {
             preset = "enter";
             "<S-TAB>" = [
