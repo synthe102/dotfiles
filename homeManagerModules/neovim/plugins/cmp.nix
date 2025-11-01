@@ -1,43 +1,26 @@
 {
   programs.nixvim = {
-    opts.completeopt = ["menu" "menuone"];
+    opts.completeopt = [
+      "menu"
+      "menuone"
+    ];
 
     plugins = {
       nvim-autopairs.enable = true;
-      luasnip.enable = true;
-
-      lspkind = {
+      blink-cmp = {
         enable = true;
-
-        cmp = {
-          enable = true;
-        };
-      };
-
-      cmp = {
-        enable = true;
-
         settings = {
-          mapping = {
-            "<C-d>" = "cmp.mapping.scroll_docs(-4)";
-            "<C-f>" = "cmp.mapping.scroll_docs(4)";
-            "<C-Space>" = "cmp.mapping.complete()";
-            "<C-e>" = "cmp.mapping.close()";
-            "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
-            "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
-            "<CR>" = "cmp.mapping.confirm({ select = true })";
+          keymap = {
+            preset = "enter";
+            "<S-TAB>" = [
+              "select_prev"
+              "fallback_to_mappings"
+            ];
+            "<TAB>" = [
+              "select_next"
+              "fallback_to_mappings"
+            ];
           };
-
-          sources = [
-            {name = "path";}
-            {name = "nvim_lsp";}
-            {name = "luasnip";}
-            {
-              name = "buffer";
-              # Words from other open buffers can also be suggested.
-              option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
-            }
-          ];
         };
       };
     };
