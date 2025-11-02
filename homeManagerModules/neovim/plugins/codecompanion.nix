@@ -1,5 +1,13 @@
 {
   programs.nixvim = {
+    keymaps = [
+      {
+        mode = "n";
+        key = "<leader>cc";
+        action = ":CodeCompanionChat<CR>";
+        options.silent = true;
+      }
+    ];
     plugins = {
       codecompanion = {
         enable = true;

@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    ./md.nix
     ./codecompanion.nix
     ./neo-tree.nix
     ./bar.nix
