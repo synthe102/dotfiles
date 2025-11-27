@@ -3,7 +3,8 @@
   lib,
   config,
   ...
-}: {
+}:
+{
   options = {
     dev.iac.enable = lib.mkEnableOption "enable IaC tooling";
   };

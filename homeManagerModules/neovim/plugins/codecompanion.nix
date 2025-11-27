@@ -38,7 +38,7 @@
                       },
                       commands = {
                         default = {
-                          "acp_agent",
+                          "vibe-acp",
                         },
                       },
                       defaults = {

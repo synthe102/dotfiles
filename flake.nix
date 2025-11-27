@@ -21,48 +21,51 @@
     catppuccin.url = "github:catppuccin/nix";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    nix-darwin,
-    nixos-wsl,
-    home-manager,
-    nixvim,
-    catppuccin,
-    ...
-  } @ inputs: let
-    user = {
-      name = "synthe102";
-    };
-  in {
-    # Build darwin flake using:
-    # $ darwin-rebuild build --flake .#simple
-    darwinConfigurations."MBA-Leonard" = nix-darwin.lib.darwinSystem {
-      system = "aarch64-darwin";
-      specialArgs = {inherit inputs user;};
-      modules = [
-        ./hosts/work-laptop/configuration.nix
-        home-manager.darwinModules.home-manager
-      ];
-    };
-    nixosConfigurations = {
-      krangle = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {inherit inputs user;};
+  outputs =
+    {
+      self,
+      nixpkgs,
+      nix-darwin,
+      nixos-wsl,
+      home-manager,
+      nixvim,
+      catppuccin,
+      ...
+    }@inputs:
+    let
+      user = {
+        name = "synthe102";
+      };
+    in
+    {
+      # Build darwin flake using:
+      # $ darwin-rebuild build --flake .#simple
+      darwinConfigurations."MBA-LeonardSuslian" = nix-darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        specialArgs = { inherit inputs user; };
         modules = [
-          ./hosts/krangle/configuration.nix
-          home-manager.nixosModules.home-manager
+          ./hosts/work-laptop/configuration.nix
+          home-manager.darwinModules.home-manager
         ];
       };
-      nixos = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {inherit inputs user;};
-        modules = [
-          ./hosts/wsl/configuration.nix
-          home-manager.nixosModules.home-manager
-          nixos-wsl.nixosModules.default
-        ];
+      nixosConfigurations = {
+        krangle = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs user; };
+          modules = [
+            ./hosts/krangle/configuration.nix
+            home-manager.nixosModules.home-manager
+          ];
+        };
+        nixos = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs user; };
+          modules = [
+            ./hosts/wsl/configuration.nix
+            home-manager.nixosModules.home-manager
+            nixos-wsl.nixosModules.default
+          ];
+        };
       };
     };
-  };
 }

@@ -3,7 +3,8 @@
   lib,
   config,
   ...
-}: {
+}:
+{
   options = {
     dev.kubernetes.enable = lib.mkEnableOption "enable k8s tooling";
   };
@@ -17,13 +18,9 @@
       krew
       k9s
       kubeseal
-      teleport
-      talosctl
-      kumactl
       kubernetes-helm
       kubectl-cnpg
       fluxcd
-      dive
     ];
 
     programs.zsh = {
