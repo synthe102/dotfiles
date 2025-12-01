@@ -47,6 +47,7 @@
           svelte.enable = true;
           ts_ls.enable = true;
           dockerls.enable = true;
+          zls.enable = true;
         };
       };
 
@@ -56,7 +57,7 @@
         sources = {
           formatting.alejandra.enable = true;
           formatting.terraform_fmt.enable = true;
-          formatting.terragrunt_fmt.enable = false; #requires upstream terragrunt fix https://github.com/NixOS/nixpkgs/issues/389694
+          formatting.terragrunt_fmt.enable = false; # requires upstream terragrunt fix https://github.com/NixOS/nixpkgs/issues/389694
         };
       };
     };

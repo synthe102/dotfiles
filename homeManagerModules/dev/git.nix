@@ -25,10 +25,11 @@ in
       gpg.enable = true;
       git = {
         enable = true;
-        userName = "synthe102";
-        userEmail = "leonard@suslian.engineer";
-
-        extraConfig = {
+        settings = {
+          user = {
+            name = "synthe102";
+            email = "leonard@suslian.engineer";
+          };
           safe.directory = "*";
           commit.gpgsign = true;
           gpg.format = "ssh";
