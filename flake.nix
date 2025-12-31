@@ -40,7 +40,7 @@
     {
       # Build darwin flake using:
       # $ darwin-rebuild build --flake .#simple
-      darwinConfigurations."MBA-LeonardSuslian" = nix-darwin.lib.darwinSystem {
+      darwinConfigurations."MacBook-Air-LeonardSuslian" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         specialArgs = { inherit inputs user; };
         modules = [

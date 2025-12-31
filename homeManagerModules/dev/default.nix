@@ -3,7 +3,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     ./kubernetes.nix
     ./git.nix
@@ -43,6 +44,7 @@
       jq
       gnused
       wget
+      claude-code
     ];
   };
 }

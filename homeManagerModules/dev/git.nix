@@ -18,6 +18,7 @@ in
       [
         git
         gh
+        jujutsu
       ]
       ++ pkgs.lib.optionals isDarwin [ pinentry_mac ];
 
