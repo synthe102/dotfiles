@@ -15,5 +15,6 @@
     ./comment.nix
     ./helm.nix
     ./snacks.nix
+    ./worktree.nix
   ];
 }

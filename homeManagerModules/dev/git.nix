@@ -19,6 +19,7 @@ in
         git
         gh
         jujutsu
+        git-worktree-switcher
       ]
       ++ pkgs.lib.optionals isDarwin [ pinentry_mac ];
 
