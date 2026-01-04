@@ -37,6 +37,8 @@ jobs:
       - uses: DeterminateSystems/nix-installer-action@main
 
       - uses: DeterminateSystems/magic-nix-cache-action@main
+        with:
+          use-flakehub: false
 
       - name: Build ${{ matrix.builds.config }}
         run: nix build ${{ matrix.builds.config }} --dry-run
