@@ -44,7 +44,6 @@
       jq
       gnused
       wget
-      claude-code
       uv
     ];
   };
