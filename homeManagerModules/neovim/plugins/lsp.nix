@@ -42,12 +42,13 @@
             installRustc = false;
             installCargo = false;
           };
-          pyright.enable = true;
           helm_ls.enable = true;
           svelte.enable = true;
           ts_ls.enable = true;
           dockerls.enable = true;
           zls.enable = true;
+          ty.enable = true;
+          ruff.enable = true;
         };
       };
 
