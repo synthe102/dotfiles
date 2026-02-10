@@ -20,6 +20,7 @@ in
         gh
         jujutsu
         git-worktree-switcher
+        git-codereview
       ]
       ++ pkgs.lib.optionals isDarwin [ pinentry_mac ];
 
