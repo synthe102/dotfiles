@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   security.pam.services.sudo_local.touchIdAuth = true;
   nix.gc = {
@@ -20,4 +20,8 @@
       Minute = 0;
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    watch
+  ];
 }
