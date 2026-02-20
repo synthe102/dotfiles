@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  inputs,
   ...
 }:
 {
@@ -45,6 +46,7 @@
       gnused
       wget
       uv
+      inputs.mistral-vibe.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
   };
 }

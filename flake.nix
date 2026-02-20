@@ -19,6 +19,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     catppuccin.url = "github:catppuccin/nix";
+    mistral-vibe = {
+      url = "github:mistralai/mistral-vibe";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -30,6 +34,7 @@
       home-manager,
       nixvim,
       catppuccin,
+      mistral-vibe,
       ...
     }@inputs:
     let
