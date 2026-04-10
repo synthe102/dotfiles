@@ -35,6 +35,7 @@ in
           };
           safe.directory = "*";
           commit.gpgsign = true;
+          signing.format = "openpgp";
           gpg.format = "ssh";
           user.signingkey = "~/.ssh/id_ed25519.pub";
           url = {
