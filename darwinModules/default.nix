@@ -1,5 +1,14 @@
 { pkgs, ... }:
 {
+  # Workaround for nixpkgs#513019: direnv's checkPhase hangs on darwin
+  # because cache.nixos.org serves zsh/fish with broken signatures and
+  # Gatekeeper SIGKILLs them mid-test. Drop once #513081 (or equivalent) lands.
+  nixpkgs.overlays = [
+    (_: prev: {
+      direnv = prev.direnv.overrideAttrs (_: { doCheck = false; });
+    })
+  ];
+
   security.pam.services.sudo_local.touchIdAuth = true;
   nix.gc = {
     automatic = true;

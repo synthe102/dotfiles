@@ -28,16 +28,17 @@ in
       gpg.enable = true;
       git = {
         enable = true;
+        signing = {
+          format = "ssh";
+          key = "~/.ssh/id_ed25519.pub";
+          signByDefault = true;
+        };
         settings = {
           user = {
             name = "synthe102";
             email = "leonard@suslian.engineer";
           };
           safe.directory = "*";
-          commit.gpgsign = true;
-          signing.format = "openpgp";
-          gpg.format = "ssh";
-          user.signingkey = "~/.ssh/id_ed25519.pub";
           url = {
             "git@github.com:" = {
               insteadOf = "https://github.com/";

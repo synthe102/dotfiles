@@ -14,8 +14,28 @@
     ];
 
     plugins = {
-      lsp-format.enable = true;
       trouble.enable = true;
+
+      conform-nvim = {
+        enable = true;
+        autoInstall = {
+          enable = true;
+          # `lsp` is a conform pseudo-formatter (delegate to the LSP), not a
+          # real binary — tell autoInstall not to look for a package for it.
+          overrides.lsp = null;
+        };
+        settings = {
+          formatters_by_ft = {
+            nix = [ "alejandra" ];
+            terraform = [ "terraform_fmt" ];
+            "_" = [ "lsp" ];
+          };
+          format_on_save = {
+            timeout_ms = 2000;
+            lsp_format = "fallback";
+          };
+        };
+      };
 
       lsp = {
         enable = true;
@@ -52,15 +72,6 @@
         };
       };
 
-      none-ls = {
-        enable = true;
-        enableLspFormat = true;
-        sources = {
-          formatting.alejandra.enable = true;
-          formatting.terraform_fmt.enable = true;
-          formatting.terragrunt_fmt.enable = false; # requires upstream terragrunt fix https://github.com/NixOS/nixpkgs/issues/389694
-        };
-      };
     };
   };
 }
