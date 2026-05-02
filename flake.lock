@@ -104,11 +104,11 @@
         "uv2nix": "uv2nix"
       },
       "locked": {
-        "lastModified": 1776782030,
-        "narHash": "sha256-Wpcrj9s1PgrqKsYedwQJSUvaIGGXclSAVvunHMDk3j0=",
+        "lastModified": 1777483935,
+        "narHash": "sha256-dACXm89ZMv1LV1wvyCZqc7NgIOvqdAKKoxeGutNjFYo=",
         "owner": "mistralai",
         "repo": "mistral-vibe",
-        "rev": "a83c81ecf591683fc9d23a44582c4ac7344b0d01",
+        "rev": "3b8f65b3067c1f990e4200aed16ec9cb6f903ea9",
         "type": "github"
       },
       "original": {
