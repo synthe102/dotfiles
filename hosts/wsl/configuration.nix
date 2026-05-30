@@ -33,6 +33,9 @@
     MESA_D3D12_DEFAULT_ADAPTER_NAME = "Nvidia";
   };
 
+  # Populate /usr/bin and /bin (incl. /usr/bin/bash) for hardcoded shebangs.
+  services.envfs.enable = true;
+
   wsl = {
     enable = true;
     defaultUser = "synthe102";
